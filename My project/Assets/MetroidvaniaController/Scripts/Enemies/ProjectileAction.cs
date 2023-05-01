@@ -13,26 +13,33 @@ public class ProjectileAction : MonoBehaviour
     private bool shoot;
 
     private Quaternion rotation;
+    public float TimeBetweenShoots;
 
     void Start()
     {
         shoot = true;
-        
-        position = transform.position + new Vector3( transform.localScale.x * 0.5f, transform.localScale.y * 0.5f);
+        if( direction.x > 0 ) { position = new Vector3(transform.position.x + transform.localScale.x * 1.3f, transform.position.y  , 0); }
+        if (direction.x < 0) { position = new Vector3(transform.position.x - transform.localScale.x * 1.3f, transform.position.y, 0); }
+        if (direction.y > 0) { position = new Vector3(transform.position.x , transform.position.y + transform.localScale.y * 1.8f, 0); }
+        if (direction.y < 0) { position = new Vector3(transform.position.x , transform.position.y - transform.localScale.y * 1.8f, 0); }
 
         rotation = transform.rotation;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+            
         if (shoot)
         {
             shoot = false;
             GameObject bullet = Instantiate ( baseBullet , position, rotation ) as GameObject;
             bullet.GetComponent<EnemyProjectile>().direction = direction;
             bullet.name = "Bullet";
-            StartCoroutine(Cooldown(1.3f));
+            StartCoroutine(Cooldown(TimeBetweenShoots));
         }
     }
 
