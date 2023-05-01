@@ -1215,6 +1215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueMark: {fileID: 0}
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
   dialogueLines: []
 --- !u!1001 &341423977
 PrefabInstance:
@@ -1407,10 +1409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueMark: {fileID: 1288855293}
+  dialoguePanel: {fileID: 302272684}
+  dialogueText: {fileID: 1667861706}
   dialogueLines:
   - Si te ofrecen drogas te van a decir
   - que se siente bien padre que te vas a reir
-  - no es ciero!!! no hagas caso no es cierto!!
+  - no es cierto!!! no hagas caso no es cierto!!
 --- !u!1 &488525583
 GameObject:
   m_ObjectHideFlags: 0
