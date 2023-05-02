@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CambiarEscena : MonoBehaviour
 {
+    Key mKey;
+
     GameObject mGameObject;
     Collider2D mCollider2D; 
 
@@ -17,7 +19,8 @@ public class CambiarEscena : MonoBehaviour
         /* Debug.Log("Start");
         Debug.Log(cambiarEscena);
         Debug.Log("-------------"); */
-        mGameObject = GameObject.Find ("Hexagon Pointed-Top");
+        mKey = FindObjectOfType<Key>();
+        mGameObject = GameObject.Find ("Portal");
         mCollider2D = mGameObject.GetComponent<Collider2D>();
     }
 
@@ -29,22 +32,25 @@ public class CambiarEscena : MonoBehaviour
         Debug.Log(mGameObject);
         Debug.Log(mCollider2D); */
 
-        /* Debug.Log(cambiarEscena);
-        Debug.Log(mCollider2D); */
-        if(cambiarEscena) {
-            CambiarA(indiceEscena);
+        Debug.Log(cambiarEscena);
+        Debug.Log(mKey.hasKey); 
+        if(cambiarEscena && mKey.hasKey) {
             cambiarEscena = false;
+            mKey.hasKey = false;
+            CambiarA(indiceEscena);
             }
-
+        cambiarEscena = false;
     }
 
     public void CambiarA(int indice){
         SceneManager.LoadScene(indice);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        cambiarEscena = true;
+        if(other.gameObject.CompareTag("Player")){
+            cambiarEscena = true;
+        }
     }
 
     
