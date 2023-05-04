@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     	Time.timeScale = 0;
         mainMenu.SetActive(true);
         settings.SetActive(false);
+
     }
 
     void Update()
