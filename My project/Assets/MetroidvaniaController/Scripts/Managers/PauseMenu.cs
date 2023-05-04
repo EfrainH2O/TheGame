@@ -39,6 +39,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void BackTMM()
     {
-	SceneManager.LoadScene(0)
+        SceneManager.LoadScene(0);
     }
 }
