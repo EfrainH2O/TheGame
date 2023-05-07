@@ -44,6 +44,6 @@ public class CentripetalShoots : MonoBehaviour
 
     public void setDirection()
     {
-        direction = new Vector2(- mRotation.transform.position.x + position.x, - mRotation.transform.position.y + position.y);
+        direction = new Vector3(- mRotation.transform.position.x + position.x, - mRotation.transform.position.y + position.y, 0);
     }
 }

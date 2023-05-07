@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c430fa92f73ca1745853a8745272c68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 23}
+  direction: {x: 0, y: 23, z: 0}
   baseBullet: {fileID: 3601269180668597583, guid: 79db301fda094cd4da5dbfd23d0739e1, type: 3}
   TimeBetweenShoots: 3
 --- !u!212 &628272399
@@ -4404,7 +4404,7 @@ GameObject:
   - component: {fileID: 2115609225}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Limits
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

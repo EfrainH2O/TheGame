@@ -5,8 +5,7 @@ using UnityEngine;
 public class ProjectileAction : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Vector2 direction;
-
+    public Vector3 direction;
     private Vector3 position;
 
     public GameObject baseBullet;
@@ -35,6 +34,8 @@ public class ProjectileAction : MonoBehaviour
             
         if (shoot)
         {
+           
+            
             shoot = false;
             GameObject bullet = Instantiate ( baseBullet , position, rotation ) as GameObject;
             bullet.GetComponent<EnemyProjectile>().direction = direction;

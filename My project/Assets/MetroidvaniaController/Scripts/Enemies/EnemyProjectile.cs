@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyProjectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour 
 {
 
-
-	public Vector2 direction;
+	public Vector3 direction;
 	public bool hasHit = false;
-	public float speed = 10f;
 	
 
 	void Start()
@@ -16,13 +14,17 @@ public class EnemyProjectile : MonoBehaviour
 
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		if (!hasHit)
-			GetComponent<Rigidbody2D>().velocity = direction * speed;
+		{
+           
+            transform.Translate(direction * Time.deltaTime);
+			
+		}
 	}
 
-	public void OnCollisionEnter2D(Collision2D collision)
+	public void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Player")
 		{
@@ -30,7 +32,7 @@ public class EnemyProjectile : MonoBehaviour
 
 			Destroy(gameObject);
 		}
-		else if (collision.gameObject.tag != "Enemy")
+		else if (collision.gameObject.tag == "Limits")
 		{
 			Destroy(gameObject);
 		}
