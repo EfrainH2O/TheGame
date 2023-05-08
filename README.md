@@ -1,7 +1,10 @@
 # TheGame
 Echoes of Sorrow
+# Sinopsis
+@diego
 # Descarga
-Proyecto en Unity 2021.3.24f
+Descargar el repositorio
+Abrir el proyecto en Unity 2021.3.24f o importarlo a una anterior
 # Controles
 * WASD / Flechitas
 * X - ataque
