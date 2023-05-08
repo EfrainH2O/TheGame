@@ -11,10 +11,13 @@ public class IceQueenMainCommand : MonoBehaviour
 
 
     public GameObject Player;
+    public GameObject Entrance;
     private GameObject Canon;
     private GameObject ACanon;
+    private GameObject TargetDetection;
     private Transform attackCheck;
     public GameObject DVD;
+    
 
     public float TimeInIdle;
     public float TimeInSingleShoot;
@@ -26,14 +29,15 @@ public class IceQueenMainCommand : MonoBehaviour
 
     private bool OnShortRange;
     private bool CanDVD;
+    private bool CanMove;
+    private bool TargetLook;
 
 
     private bool ReadyDecision;
     private int Decision;
     private bool DoingAction;
     private bool par;
-    private bool CanMove;
-    private bool TargetLook;
+    private bool characterOnScene;
 
 
 
@@ -48,6 +52,7 @@ public class IceQueenMainCommand : MonoBehaviour
         CanMove = false;
         Canon = transform.GetChild(0).gameObject;
         ACanon = transform.GetChild(1).gameObject;
+        TargetDetection = transform.GetChild(2).gameObject;
 
         attackCheck = transform.Find("AttackCheck").transform;
 
@@ -58,45 +63,50 @@ public class IceQueenMainCommand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DVDAttack();
-
-        if (!DoingAction)
+        characterOnScene = Entrance.GetComponent<Entry>().HasArrived;
+        if (characterOnScene)
         {
-            Flipo();
+            DVDAttack();
+
+            if (!DoingAction)
+            {
+                Flipo();
+            }
+
+            if (!ReadyDecision)
+            {
+                Decision = Random.Range(1, 5);
+                if (Decision % 2 == 0)
+                {
+                    par = true;
+                }
+
+            }
+
+            if (ReadyDecision)
+            {
+
+                if (life >= 5)
+                {
+                    Fase1();
+                }
+                else if (life >= 3)
+                {
+                    Fase2();
+                }
+                else if (life >= 1)
+                {
+                    Fase3();
+                }
+                else if (life <= 0)
+                {
+                    StartCoroutine(Dead());
+                }
+
+            }
+            Move(CanMove);
+            OnShortRange = TargetDetection.GetComponent<Detector>().detected;
         }
-
-        if (!ReadyDecision)
-        {
-            Decision = Random.Range(1, 5);
-            if (Decision % 2 == 0)
-            {
-                par = true;
-            }
-
-        }
-
-        if (ReadyDecision)
-        {
-
-            if (life >= 5)
-            {
-                Fase1();
-            }
-            else if (life >= 3)
-            {
-                Fase2();
-            }
-            else if (life >= 1)
-            {
-                Fase3();
-            }
-            else if (life <= 0)
-            {
-               StartCoroutine( Dead());
-            }
-
-        }
-        Move(CanMove);
         Respawn();
     }
 
@@ -270,7 +280,6 @@ public class IceQueenMainCommand : MonoBehaviour
             Dash();
         }
     }
-
     void Fase3()
     {
         //Animator fase3 true;
@@ -314,6 +323,8 @@ public class IceQueenMainCommand : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+   
    
 
 

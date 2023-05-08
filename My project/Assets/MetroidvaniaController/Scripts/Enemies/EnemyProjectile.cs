@@ -19,7 +19,7 @@ public class EnemyProjectile : MonoBehaviour
 		if (!hasHit)
 		{
            
-            transform.Translate(direction * Time.deltaTime);
+            transform.Translate(direction * Time.deltaTime, Space.World);
 			
 		}
 	}
