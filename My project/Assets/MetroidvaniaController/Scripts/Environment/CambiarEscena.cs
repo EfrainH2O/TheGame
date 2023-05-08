@@ -8,6 +8,7 @@ public class CambiarEscena : MonoBehaviour
     Key mKey;
 
     public GameObject mGameObject;
+    private GameObject Player;
     Collider2D mCollider2D; 
 
     public bool cambiarEscena = false;
