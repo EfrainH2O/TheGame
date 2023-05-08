@@ -5,7 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
 
-    GameObject mGameObject;
+    public GameObject mGameObject;
     Collider2D mCollider2D; 
 
     public bool hasKey = false;
@@ -13,7 +13,7 @@ public class Key : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mGameObject = GameObject.Find ("Llave");
+        //mGameObject = GameObject.Find ("Llave");
         mCollider2D = mGameObject.GetComponent<Collider2D>();
     }
 
