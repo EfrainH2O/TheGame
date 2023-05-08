@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f8586ceddfc8445b5ad04800680978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 895588895}
   mGameObject: {fileID: 468071060}
   hasKey: 0
 --- !u!61 &468071064
@@ -2305,6 +2306,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &895588895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1377240496476148, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+  m_PrefabInstance: {fileID: 1918896671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &925631638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2731,7 +2737,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114231493902538710, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
   m_PrefabInstance: {fileID: 1918896671}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 895588895}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 783f8b7882d2d2a42a5b76de9179978f, type: 3}

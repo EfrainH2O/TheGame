@@ -13,7 +13,7 @@ public class Key : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("DrawnCharacter2D");
+        Player = GameObject.Find("DrawCharacter");
         //mGameObject = GameObject.Find ("Llave");
         mCollider2D = mGameObject.GetComponent<Collider2D>();
     }

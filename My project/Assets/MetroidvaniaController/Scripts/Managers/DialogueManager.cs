@@ -7,6 +7,9 @@ public class DialogueManager : MonoBehaviour
 {
 
     #region variables
+    GameObject Player;
+    CharacterController2D mCharacterController2D;
+    
     [SerializeField] private GameObject dialogueMark;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
@@ -19,7 +22,10 @@ public class DialogueManager : MonoBehaviour
 
     #region main
     // Start is called before the first frame update
-    void Start() {}
+    void Start() {
+        Player = GameObject.Find("DrawCharacter");  
+        mCharacterController2D = Player.GetComponent<CharacterController2D>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -61,6 +67,7 @@ public class DialogueManager : MonoBehaviour
             dialogueRunning = false;
             dialoguePanel.SetActive(false);
             dialogueMark.SetActive(true);
+            mCharacterController2D.HealDamage((int)mCharacterController2D.Maxlife); //curar al jugador
             Time.timeScale = 1f; //regresar el tiempo para habilitar el movimiento
         }
     }

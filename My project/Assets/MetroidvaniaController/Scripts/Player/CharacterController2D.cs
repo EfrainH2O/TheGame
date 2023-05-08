@@ -25,6 +25,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private float m_DashForce = 25f;
 	private bool canDash = true;
 	private bool isDashing = false; //If player is dashing
+	private bool CanSlide = false;
 	private bool m_IsWall = false; //If there is a wall in front of the player
 	private bool isWallSliding = false; //If player is sliding in a wall
 	private bool oldWallSlidding = false; //If player is sliding in a wall in the previous frame
@@ -196,7 +197,7 @@ public class CharacterController2D : MonoBehaviour
 				animator.SetBool("IsDoubleJumping", true);
 			}
 
-			else if (m_IsWall && !m_Grounded)
+			else if (m_IsWall && !m_Grounded && CanSlide)
 			{
 				if (!oldWallSlidding && m_Rigidbody2D.velocity.y < 0 || isDashing)
 				{
@@ -247,7 +248,7 @@ public class CharacterController2D : MonoBehaviour
 					StartCoroutine(DashCooldown());
 				}
 			}
-			else if (isWallSliding && !m_IsWall && canCheck) 
+			else if (isWallSliding && !m_IsWall && canCheck && CanSlide) 
 			{
 				isWallSliding = false;
 				animator.SetBool("IsWallSliding", false);
