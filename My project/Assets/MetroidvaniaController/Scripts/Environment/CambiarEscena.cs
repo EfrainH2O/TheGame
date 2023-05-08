@@ -7,7 +7,7 @@ public class CambiarEscena : MonoBehaviour
 {
     Key mKey;
 
-    GameObject mGameObject;
+    public GameObject mGameObject;
     Collider2D mCollider2D; 
 
     public bool cambiarEscena = false;
@@ -20,7 +20,7 @@ public class CambiarEscena : MonoBehaviour
         Debug.Log(cambiarEscena);
         Debug.Log("-------------"); */
         mKey = FindObjectOfType<Key>();
-        mGameObject = GameObject.Find ("Portal");
+        //mGameObject = GameObject.Find ("Portal");
         mCollider2D = mGameObject.GetComponent<Collider2D>();
     }
 
