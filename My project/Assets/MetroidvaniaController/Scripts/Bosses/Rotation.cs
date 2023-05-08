@@ -8,7 +8,7 @@ public class Rotation : MonoBehaviour
     private Vector3 Corner;
     public float angle;
     public float speedOfChange;
-    private bool can;
+
 
  
 
@@ -17,7 +17,7 @@ public class Rotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        can = true;
+   
         angle = angle * 1000f;
     
     }
@@ -26,18 +26,16 @@ public class Rotation : MonoBehaviour
     void Update()
     {
 
+        
 
-        if (can)
-        {
-
-            can = false;
+     
             Axis = transform.position;
             Corner = Vector3.back;
             transform.RotateAround(Axis, Corner, angle );
-            StartCoroutine(Wait(speedOfChange));
+            
 
 
-        }
+        
 
     }
     
@@ -45,10 +43,6 @@ public class Rotation : MonoBehaviour
     
 
 
-    IEnumerator Wait(float time)
-    {
-        yield return new WaitForSeconds(time);
-        can = true;
-    }
+
 
 }
