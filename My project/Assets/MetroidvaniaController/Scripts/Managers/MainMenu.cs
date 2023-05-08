@@ -8,37 +8,27 @@ public class MainMenu : MonoBehaviour
 
 {
   public GameObject mainMenu;
-  public GameObject settings;
-  bool isPaused;
-
+  
     void Awake()
     {
-    	Time.timeScale = 0;
+        Time.timeScale = 1;
         mainMenu.SetActive(true);
-        settings.SetActive(false);
     }
 
-    void Update()
-    {
+    void Update(){}
 
-    }
 
     public void StartGame()
     {
-       mainMenu.SetActive(false);
-       SceneManager.LoadScene(1);
+      Debug.Log("el boton jala");
+	   SceneManager.LoadScene(1);
+      Debug.Log("ya cambio escena");
     }
 
-    public void Settings()
+   public void Settings()
     {
-       mainMenu.SetActive(false);
-       settings.SetActive(true);
+      Debug.Log("el boton jala");
+	   SceneManager.LoadScene(0);
+      Debug.Log("ya cambio escena");
     }
-
-    public void BackToMM()
-    {
-       mainMenu.SetActive(true);
-       settings.SetActive(false);
-    }
-
 }
