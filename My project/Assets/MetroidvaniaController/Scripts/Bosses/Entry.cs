@@ -8,7 +8,7 @@ public class Entry : MonoBehaviour
     public bool HasArrived;
     private GameObject Player;
 
-    public void OnCollisionExit2D (collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "player")
         {
