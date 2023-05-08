@@ -141,7 +141,7 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	public void Move(float move, bool jump, bool dash)
+	public void Move(float move, bool jump, bool dash, bool down)
 	{
 		if (canMove) {
 			if (dash && canDash && !isWallSliding)
@@ -153,6 +153,10 @@ public class CharacterController2D : MonoBehaviour
 			if (isDashing)
 			{
 				m_Rigidbody2D.velocity = new Vector2(transform.localScale.x * m_DashForce, 0);
+			}
+			if (down)
+			{
+				m_Rigidbody2D.velocity = new Vector3(0, -transform.localScale.y * m_DashForce, 0);
 			}
 			//only control the player if grounded or airControl is turned on
 			else if (m_Grounded || m_AirControl)
