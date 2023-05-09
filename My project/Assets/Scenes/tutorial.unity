@@ -3672,7 +3672,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4660076192433278, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660076192433278, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4660076192433278, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3680,7 +3684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4660076192433278, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.37
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4660076192433278, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3714,6 +3718,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 70405055242815152, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: m_Size.x
+      value: 4.27096
+      objectReference: {fileID: 0}
+    - target: {fileID: 70405055242815152, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: m_Size.y
+      value: 8.370916
+      objectReference: {fileID: 0}
+    - target: {fileID: 70405055242815152, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05869198
+      objectReference: {fileID: 0}
+    - target: {fileID: 70405055242815152, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.7065668
+      objectReference: {fileID: 0}
     - target: {fileID: 82701611152381692, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3722,9 +3742,21 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114145887554720856, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: runSpeed
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 114231493902538710, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: life
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: Maxlife
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
+      propertyPath: m_JumpForce
+      value: 3400
       objectReference: {fileID: 0}
     - target: {fileID: 114231493902538710, guid: 1424ef83db13d6841af4df2eee5d446b, type: 3}
       propertyPath: canDoubleJump
