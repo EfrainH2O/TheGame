@@ -4,7 +4,7 @@ Echoes of Sorrow
 @diego
 # Descarga
 * Descargar el repositorio
-* Abrir _My project_ en Unity 2021.3.24f o importarlo a una anterior 
+* Abrir _My project_ en Unity 2021.3.24f o importarlo a una versión anterior 
 # Controles
 * WASD / Flechitas
 * X - ataque
