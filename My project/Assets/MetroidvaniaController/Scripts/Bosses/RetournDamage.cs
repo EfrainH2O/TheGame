@@ -10,7 +10,7 @@ public class RetournDamage : MonoBehaviour
     void Start()
     {
         isHit = false;
-        boss = GameObject.Find("IceQueend");
+        boss = GameObject.Find("IceQueen");
     }
 
     void Update()

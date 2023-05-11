@@ -14,6 +14,7 @@ public class IceQueenMainCommand : MonoBehaviour
     public GameObject Entrance;
     private GameObject Canon;
     private GameObject ACanon;
+    private GameObject Sword;
     private GameObject TargetDetection;
     private Transform attackCheck;
     public GameObject DVD;
@@ -29,13 +30,13 @@ public class IceQueenMainCommand : MonoBehaviour
 
     private bool OnShortRange;
     private bool CanDVD;
-    private bool CanMove;
+    public bool CanMove;
     private bool TargetLook;
 
 
     private bool ReadyDecision;
     private int Decision;
-    private bool DoingAction;
+    public bool DoingAction;
     private bool par;
     private bool characterOnScene;
 
@@ -53,8 +54,7 @@ public class IceQueenMainCommand : MonoBehaviour
         Canon = transform.GetChild(0).gameObject;
         ACanon = transform.GetChild(1).gameObject;
         TargetDetection = transform.GetChild(2).gameObject;
-
-        attackCheck = transform.Find("AttackCheck").transform;
+        Sword = transform.GetChild(3).gameObject;
 
         Canon.SetActive(false);
         ACanon.SetActive(false);
@@ -133,24 +133,6 @@ public class IceQueenMainCommand : MonoBehaviour
 
     }
 
-    IEnumerator MeleeAttack()
-    {
-
-        transform.GetComponent<Animator>().SetBool("Slash", true);
-        Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
-        for (int i = 0; i < collidersEnemies.Length; i++)
-        {
-            if (collidersEnemies[i].gameObject.tag == "Player")
-            {
-                collidersEnemies[i].gameObject.GetComponent<CharacterController2D>().ApplyDamage(transform.position);
-            }
-        }
-        yield return new WaitForSeconds(1.3f);
-        CanMove = true;
-        DoingAction = true;
-
-    }
-
 
     IEnumerator SingleBall(float delay, int Fase)
     {
@@ -192,7 +174,7 @@ public class IceQueenMainCommand : MonoBehaviour
     {
         DoingAction = true;
         CanMove = false;
-        MeleeAttack();
+        Sword.GetComponent<Sword>().Swing();
         StartCoroutine(WaitToEnd(TimeInIdle));
 
     }
@@ -266,7 +248,7 @@ public class IceQueenMainCommand : MonoBehaviour
         }
         else
         {
-            SingleBall(TimeInSingleShoot, 2);
+            SingleBall(TimeInSingleShoot, 1);
         }
     }
     void Fase2()
@@ -308,6 +290,7 @@ public class IceQueenMainCommand : MonoBehaviour
         CanMove = false;
         Canon.SetActive(false);
         ACanon.SetActive(false);
+        Sword.SetActive(false);
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
