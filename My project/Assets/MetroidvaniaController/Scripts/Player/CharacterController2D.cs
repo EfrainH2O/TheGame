@@ -159,7 +159,7 @@ public class CharacterController2D : MonoBehaviour
 				m_Rigidbody2D.velocity = new Vector3(0, -transform.localScale.y * m_DashForce, 0);
 			}
 			//only control the player if grounded or airControl is turned on
-			else if (m_Grounded || m_AirControl)
+			if (m_Grounded || m_AirControl)
 			{
 				if (m_Rigidbody2D.velocity.y < -limitFallSpeed)
 					m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, -limitFallSpeed);
